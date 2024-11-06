@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+class clsSumArrayElement
+{
+
+public:
+
+	static short SumOFArrayElements(short Array[], short ArrayLength)
+	{
+		short Sum = 0;
+
+		for (short i = 0; i < ArrayLength; i++)
+		{
+			Sum += Array[i];
+		}
+
+		return Sum;
+	}
+
+	static void PrintArraySum(short Array[], short ArrayLength)
+	{
+
+		short Sum = SumOFArrayElements(Array, ArrayLength);
+
+		cout << "Sum of Array given = " << Sum << endl;
+
+	}
+
+};
+
+
+int main()
+{
+    short Array[] = { 1,2,3,4 };
+
+    short ArrayLength = sizeof(Array) / sizeof(Array[0]);
+
+    clsSumArrayElement::PrintArraySum(Array, ArrayLength);
+}
