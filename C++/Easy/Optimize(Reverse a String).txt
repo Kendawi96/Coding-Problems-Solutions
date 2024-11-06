@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+
+string ReadAstring()
+{
+    string Text;
+
+    cout << "Please enter a text or word to reverse it..\n";
+
+    cin >> Text;
+
+    return Text;
+}
+
+void Sawp(char &a, char &b)
+{
+    char Temp;
+
+    Temp = a;
+    a = b;
+    b = Temp;
+}
+
+string ReverseAstring()
+{
+    string Text = ReadAstring();
+
+    short left = 0;
+    short right = Text.length() - 1;
+
+
+    while (left < right)
+    {
+        Sawp(Text[left],Text[right]);
+
+        left++;
+        right--;
+    }
+
+    return Text;
+}
+
+
+int main()
+{
+    cout << ReverseAstring() << endl;
+}
+
